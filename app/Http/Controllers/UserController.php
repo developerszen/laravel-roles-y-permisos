@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     function index()
     {
-        return User::latest()->paginate(8);
+        return User::latest()->get(['id', 'name', 'email', 'enabled']);
     }
 
     function store(Request $request)
@@ -35,8 +35,12 @@ class UserController extends Controller
 
     function update(Request $request, User $user)
     {
+        $request->validate([
+            'enabled' => 'required|boolean',
+        ]);
+
         $user->update([
-            'enabled' => $request->has('enabled') ? true : false,
+            'enabled' => $request->input('enabled'),
         ]);
 
         return $user;

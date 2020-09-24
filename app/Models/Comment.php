@@ -11,6 +11,8 @@ class Comment extends Model
 
     protected $guarded = [];
 
+    protected $casts = ['salient' => 'boolean'];
+
     function user()
     {
         return $this->belongsTo(User::class);

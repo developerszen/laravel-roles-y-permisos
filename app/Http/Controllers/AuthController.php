@@ -12,7 +12,9 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        $token = auth()->attempt($request->only(['mobile_phone', 'password']));
+        $credentials = $request->only(['email', 'password']);
+
+        $token = auth()->attempt($credentials);
 
         if($token) return response(compact('token'));
 
@@ -25,5 +27,9 @@ class AuthController extends Controller
         auth()->logout();
 
         return response([], 204);
+    }
+
+    function me() {
+        return auth()->user();
     }
 }

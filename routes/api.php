@@ -11,8 +11,9 @@ use App\Http\Controllers\CommentController;
 | Auth
 |--------------------------------------------------------------------------
 */
-Route::post('login', [AuthController::class, 'login']);
-Route::post('logout', [AuthController::class, 'logout']);
+Route::post('auth/me', [AuthController::class, 'me']);
+Route::post('auth/login', [AuthController::class, 'login']);
+Route::post('auth/logout', [AuthController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function () {
     /*

@@ -11,9 +11,7 @@ class Post extends Model
 
     protected $guarded = [];
 
-    protected $casts = [
-        'published' => 'boolean',
-    ];
+    protected $casts = ['published' => 'boolean'];
 
     function author()
     {

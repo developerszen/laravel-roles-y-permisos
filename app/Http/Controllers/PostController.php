@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -10,7 +9,11 @@ class PostController extends Controller
 {
     function index()
     {
-        return Post::latest()->with('author')->paginate(8);
+        return Post::latest()
+            ->with('author', function ($query) {
+                $query->select(['id', 'name']);
+            })
+            ->get(['id', 'user_id', 'title', 'published', 'created_at']);
     }
 
     function store(Request $request)
