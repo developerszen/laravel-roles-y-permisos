@@ -13,6 +13,16 @@ class RolesAndPermissionsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $admin = '';
+        $editor = '';
+        $writer = '';
+
+        $permissions = collect([]);
+
+        $permissions_by_role = [
+            'admin' => [],
+            'editor' => [],
+            'writer' => [],
+        ];
     }
 }
