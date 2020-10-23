@@ -19,6 +19,8 @@ class UserSeeder extends Seeder
         $user_admin = User::factory()->create(['email' => 'admin@zen-tech.com']);
         $user_super_admin = User::factory()->create(['email' => 'super.admin@zen-tech.com']);
 
-        User::factory(30)->create();
+        User::factory(30)->make()->each(function ($user) {
+            $user->save();
+        });
     }
 }
