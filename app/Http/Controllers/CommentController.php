@@ -23,7 +23,7 @@ class CommentController extends Controller
         return $comment;
     }
 
-    function salient(Comment $comment)
+    function salient(Post $post, Comment $comment)
     {
         Comment::where('salient', true)->update([
             'salient' => false,

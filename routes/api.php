@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
     |--------------------------------------------------------------------------
     */
     Route::post('posts/{post}/comments', [CommentController::class, 'store']);
-    Route::post('posts/comments/{comment}/salient', [CommentController::class, 'salient']);
+    Route::post('posts/{post}/comments/{comment}/salient', [CommentController::class, 'salient']);
     /*
     |--------------------------------------------------------------------------
     | Posts
