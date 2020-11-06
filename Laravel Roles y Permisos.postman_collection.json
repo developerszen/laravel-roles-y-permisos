@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1e3141d2-81b6-4d74-ba69-6162509d487f",
+		"_postman_id": "e12683dc-bc41-4a0f-8b55-bcb9d325d499",
 		"name": "Laravel Roles y Permisos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -513,14 +513,15 @@
 									}
 								},
 								"url": {
-									"raw": "{{host}}/posts/comments/151/salient",
+									"raw": "{{host}}/posts/1/comments/50/salient",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
 										"posts",
+										"1",
 										"comments",
-										"151",
+										"50",
 										"salient"
 									]
 								}
